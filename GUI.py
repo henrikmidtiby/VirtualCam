@@ -56,10 +56,11 @@ while True:
 	c1.focus = cv2.getTrackbarPos("focus",WINDOW_NAME) - 500
 	c1.sx = (cv2.getTrackbarPos("Sx",WINDOW_NAME)+1)/100
 	c1.sy = (cv2.getTrackbarPos("Sy",WINDOW_NAME)+1)/100
-	k1 = cv2.getTrackbarPos("K1",WINDOW_NAME)/100000
-	k2 = cv2.getTrackbarPos("K2",WINDOW_NAME)/100000
-	p1 = cv2.getTrackbarPos("P1",WINDOW_NAME)/100000
-	p2 = cv2.getTrackbarPos("P2",WINDOW_NAME)/100000
+	k1 = 100*float(cv2.getTrackbarPos("K1",WINDOW_NAME)/100000. - 0.5)
+	k2 = 100*float(cv2.getTrackbarPos("K2",WINDOW_NAME)/100000. - 0.5)
+	p1 = float(cv2.getTrackbarPos("P1",WINDOW_NAME))/100000. - 0.5
+	p2 = float(cv2.getTrackbarPos("P2",WINDOW_NAME))/100000. - 0.5
+
 	c1.KpCoeff[0] = k1
 	c1.KpCoeff[1] = k2
 	c1.KpCoeff[2] = p1
